@@ -50,7 +50,7 @@
                     ID
                 </div>
                 <div class="content_body">
-                    @XXXXXX
+                    @uvt6010l
                 </div>
             </div>
             <div class="line_modal_content_box">
@@ -58,7 +58,7 @@
                     友達追加
                 </div>
                 <div class="content_body">
-                    <a href="http://line.me/ti/p/%40vpm1326x"><img src="/img/shared/bt_line_friend.png"></a>
+                    <a href="http://line.me/ti/p/%40uvt6010l"><img src="/img/shared/bt_line_friend.png"></a>
                 </div>
             </div>
             <div class="line_modal_content_box">
