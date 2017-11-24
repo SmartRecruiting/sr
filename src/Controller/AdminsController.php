@@ -56,10 +56,9 @@ class AdminsController extends AppController
 
 
     public function admin(){
-        $sims = $this->AnswerRecord->find('all');
-        $this->set(array('sims'=> $sims));
-        $this->render('/Features/sim');   
-
+        $records = $this->AnswerRecord->find('all');
+        $this->set(array('records'=> $records));
+        $this->render('admin');   
 
     }
 
