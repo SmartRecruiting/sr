@@ -14,7 +14,7 @@ use App\Utils\Mobile_Detect;
 
 class AdminsController extends AppController
 {
-    public $uses = array('/Entity/AnswerRecord');
+    public $uses = array('AnswerRecord');
 
     public function beforeFilter(Event $event)
     {
