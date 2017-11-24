@@ -66,6 +66,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/terms', ['controller' => 'Answers', 'action' => 'terms']);
     $routes->connect('/privacy', ['controller' => 'Answers', 'action' => 'privacy']);
     $routes->connect('/company', ['controller' => 'Answers', 'action' => 'company']);
+    $routes->connect('/admin', ['controller' => 'Admins', 'action' => 'admin']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
