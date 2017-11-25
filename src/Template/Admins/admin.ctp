@@ -16,6 +16,9 @@
 
 <?php 
 	debug($data);
+
+echo "AAAAAAAAAA";
+	debug($record);
 ?>
 
 </table>

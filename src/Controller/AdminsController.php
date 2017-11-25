@@ -63,9 +63,10 @@ class AdminsController extends AppController
         foreach ($record as $r){
             $customerid = $r['from_answer_id'];
             $code= $r['answer_code'];
-            array_push($data[$customerid][$code],$r['answer_value']);
+            array_push($data[$customerid][$code]=$r['answer_value']);
         }
         $this->set('data', $data);
+        $this->set('record', $record);
         $this->render('admin');   
 
     }
