@@ -141,6 +141,9 @@ class AnswersController extends AppController
                             }
                         }
 
+                        $save_status = ['form_answer_id'=>$form_answer_id, 'answer_code'=>'status', 'answer_value'=>0];
+                        $this->AnswerRecords->save($save_status);
+
                         $this->FormAnswers->getConnection()->commit();
                         $this->stepIn('complete');
 
