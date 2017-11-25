@@ -21,32 +21,42 @@
 </tr>
 <?php
 	foreach($data as $key){
-		echo "<tr>";
-		echo "<td>".$key['has_license']."</td>";
-		echo "<td>".$key['work_style']."</td>";
-		if(!empty($key['term_wish'])){
-			echo "<td>".$key['term_wish']."</td>";
-		}else{
-			echo "<td></td>";
+		if(!empty($key['status']) && $key['status'] < 100){
+			echo "<tr>";
+			echo "<td>".$key['has_license']."</td>";
+			echo "<td>".$key['work_style']."</td>";
+			if(!empty($key['term_wish'])){
+				echo "<td>".$key['term_wish']."</td>";
+			}else{
+				echo "<td></td>";
+			}
+			if(!empty($key['zip_code'])){
+				echo "<td>".$key['zip_code']."</td>";
+			}else{
+				echo "<td></td>";
+			}
+			echo "<td>".$key['address_prefecture']."</td>";
+			echo "<td>".$key['address_city']."</td>";
+			echo "<td>".$key['name']."</td>";
+			echo "<td>".$key['birthday_year']."</td>";
+			echo "<td>".$key['birthday_month']."</td>";
+			echo "<td>".$key['tel']."</td>";
+			if(!empty($key['email'])){
+				echo "<td>".$key['email']."</td>";
+			}else{
+				echo "<td></td>";
+			}
+			echo "<td><select name='status'>
+<option value='0'>0: 未対応</option>
+<option value='1'>1: 電話予定</option>
+<option value='2'>2: 電話調整中</option>
+<option value='3'>3: 面接調整中</option>
+<option value='4'>4: 面接済</option>
+<option value='101'>101: 採用</option>
+<option value='102'>102: 不採用</option>
+</select></td>";
+			echo "</tr>";
 		}
-		if(!empty($key['zip_code'])){
-			echo "<td>".$key['zip_code']."</td>";
-		}else{
-			echo "<td></td>";
-		}
-		echo "<td>".$key['address_prefecture']."</td>";
-		echo "<td>".$key['address_city']."</td>";
-		echo "<td>".$key['name']."</td>";
-		echo "<td>".$key['birthday_year']."</td>";
-		echo "<td>".$key['birthday_month']."</td>";
-		echo "<td>".$key['tel']."</td>";
-		if(!empty($key['email'])){
-			echo "<td>".$key['email']."</td>";
-		}else{
-			echo "<td></td>";
-		}
-		echo "<td> </td>";
-		echo "</tr>";
 	}
 //	debug($data);
 
