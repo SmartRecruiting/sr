@@ -56,9 +56,8 @@ class AdminsController extends AppController
 
     public function admin(){
         $this->viewBuilder()->layout('default_admin');
-//        $this->layout = 'default_admin';
         $this->loadModel('AnswerRecords');
-        $records = $this->AnswerRecords->find('all');
+        $records = $this->AnswerRecords->find('all',array('conditions'=>array('status'=>0)));
         $record = $records->all();
         $data = array();
         foreach ($record as $r){
