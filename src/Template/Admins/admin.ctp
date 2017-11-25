@@ -22,7 +22,7 @@
 </tr>
 <?php
 	foreach($data as $key){
-	//	if(!empty($key['status']) && $key['status'] !== '102'){
+		if(!empty($key['status'])){
 			echo "<tr>";
 			echo "<td>".$key['has_license']."</td>";
 			echo "<td>".$key['work_style']."</td>";
@@ -58,7 +58,7 @@
 <option value='102'>102: 不採用</option>
 </select></td>";
 			echo "</tr>";
-	//	}
+		}
 	}
 //	debug($data);
 
