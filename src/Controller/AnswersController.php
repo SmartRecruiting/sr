@@ -141,8 +141,10 @@ class AnswersController extends AppController
                             }
                         }
 
+                        $save_record = $this->AnswerRecords->newEntity();
                         $save_status = ['form_answer_id'=>$form_answer_id, 'answer_code'=>'status', 'answer_value'=>0];
-                        $this->AnswerRecords->save($save_status);
+                        $save_record = $this->FormAnswers->patchEntity($save_record, $save_status);
+                        $this->AnswerRecords->save($save_record);
 
                         $this->FormAnswers->getConnection()->commit();
                         $this->stepIn('complete');
