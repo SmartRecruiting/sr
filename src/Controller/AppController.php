@@ -61,6 +61,11 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
+        // 管理者用レイアウトを呼び出す
+        if(!empty($this->params['admin']) ) {
+            $this->layout = 'default_admin';
+        }   
+
         // Note: These defaults are just to get started quickly with development
         // and should not be used in production. You should instead set "_serialize"
         // in each action as required.
@@ -69,11 +74,6 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
-    
-        // 管理者用レイアウトを呼び出す
-        if(!empty($this->params['admin']) ) {
-            $this->layout = 'default_admin';
-        }   
 
     }
 }
