@@ -59,14 +59,14 @@ class AdminsController extends AppController
         $records = $this->AnswerRecords->find('all');
         $record = $records->all();
         $data = array();
-        $i = 1;
+//        $i = 1;
         foreach ($record as $r){
-            $customerid = $r['form_answer_id'];
+            $customerid = $r['from_answer_id'];
             $code= $r['answer_code'];
-            $data[$customerid][$code]= $r['answer_value'];
+            array_push($data[$customerid][$code]=$r['answer_value']);
         }
         $this->set('data', $data);
-        $this->set('record', $record);
+      //  $this->set('record', $record);
         $this->render('admin');   
 
     }
