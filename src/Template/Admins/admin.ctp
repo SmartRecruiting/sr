@@ -15,7 +15,7 @@
 </tr>
 
 <?php 
-	debug($record);
+	debug($data);
 ?>
 
 </table>

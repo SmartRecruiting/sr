@@ -58,7 +58,14 @@ class AdminsController extends AppController
         $this->loadModel('AnswerRecords');
         $records = $this->AnswerRecords->find('all');
         $record = $records->all();
-        $this->set('record', $record);
+        $data = array();
+        $i = 1;
+        foreach ($record['items'] as $r){
+            $customerid = $r['from_answer_id'];
+            $code= $r['answer_code'];
+            array_push($data[$customerid][$code],$r['answer_value']);
+        }
+        $this->set('data', $data);
         $this->render('admin');   
 
     }
