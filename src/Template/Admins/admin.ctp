@@ -21,7 +21,7 @@
 </tr>
 <?php
 	foreach($data as $key){
-		if(!empty($key['status']) && $key['status'] < 100){
+		if(!empty($key['status']) && $key['status'] != '102'){
 			echo "<tr>";
 			echo "<td>".$key['has_license']."</td>";
 			echo "<td>".$key['work_style']."</td>";
