@@ -71,7 +71,7 @@ class AppController extends Controller
         }
     
         // 管理者用レイアウトを呼び出す
-        if(Configure::read('Routing.prefixes') && !empty($this->params['admin']) ) {
+        if(!empty($this->params['admin']) ) {
             $this->layout = 'default_admin';
         }   
 
