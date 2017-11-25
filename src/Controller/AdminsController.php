@@ -55,8 +55,8 @@ class AdminsController extends AppController
     }
 
     public function admin(){
-        $this->loadModel('AnswerRecords');
-        $records = $this->AnswerRecords->find('all');
+        $this->loadModel('AnswerRecordsTable');
+        $records = $this->AnswerRecordsTable->find("all");
         $this->set('records', $records);
         $this->render('admin');   
 
