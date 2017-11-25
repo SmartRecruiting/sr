@@ -61,7 +61,7 @@ class AdminsController extends AppController
         $data = array();
         $i = 1;
         foreach ($record as $r){
-            $customerid = $r['from_answer_id'];
+            $customerid = $r['form_answer_id'];
             $code= $r['answer_code'];
             $data[$customerid][$code]= $r['answer_value'];
         }
