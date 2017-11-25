@@ -24,15 +24,27 @@
 		echo "<tr>";
 		echo "<td>".$key['has_license']."</td>";
 		echo "<td>".$key['work_style']."</td>";
-		echo "<td>".$key['term_wish']."</td>";
-		echo "<td>".$key['zip_code']."</td>";
+		if(!empty($key['term_wish'])){
+			echo "<td>".$key['term_wish']."</td>";
+		}else{
+			echo "<td></td>";
+		}
+		if(!empty($key['zip_code'])){
+			echo "<td>".$key['zip_code']."</td>";
+		}else{
+			echo "<td></td>";
+		}
 		echo "<td>".$key['address_prefecture']."</td>";
 		echo "<td>".$key['address_city']."</td>";
 		echo "<td>".$key['name']."</td>";
 		echo "<td>".$key['birthday_year']."</td>";
 		echo "<td>".$key['birthday_month']."</td>";
 		echo "<td>".$key['tel']."</td>";
-		echo "<td>".$key['email']."</td>";
+		if(!empty($key['email'])){
+			echo "<td>".$key['email']."</td>";
+		}else{
+			echo "<td></td>";
+		}
 		echo "<td> </td>";
 		echo "</tr>";
 	}

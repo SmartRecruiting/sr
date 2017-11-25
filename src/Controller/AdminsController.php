@@ -55,18 +55,17 @@ class AdminsController extends AppController
     }
 
     public function admin(){
+        $this->layout = 'default_admin';
         $this->loadModel('AnswerRecords');
         $records = $this->AnswerRecords->find('all');
         $record = $records->all();
         $data = array();
-//        $i = 1;
         foreach ($record as $r){
             $customerid = $r['form_answer_id'];
             $code= $r['answer_code'];
             $data[$customerid][$code] = $r['answer_value'];
         }
         $this->set('data', $data);
-      //  $this->set('record', $record);
         $this->render('admin');   
 
     }
