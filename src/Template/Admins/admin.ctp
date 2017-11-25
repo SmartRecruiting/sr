@@ -17,7 +17,8 @@
 	<th>出生月</th>
 	<th>電話番号</th>
 	<th>Email</th>
-	<th>ステータス</th>
+	<th>ステータス1</th>
+	<th>ステータス2</th>
 </tr>
 <?php
 	foreach($data as $key){
@@ -46,6 +47,7 @@
 			}else{
 				echo "<td></td>";
 			}
+			echo "<td>".$key['status']."</td>";
 			echo "<td><select name='status'>
 <option value='0'>0: 未対応</option>
 <option value='1'>1: 電話予定</option>
