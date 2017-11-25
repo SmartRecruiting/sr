@@ -22,7 +22,7 @@
 </tr>
 <?php
 	foreach($data as $key){
-		if($key['status'] == '0'){
+		if(!empty($key['status']) && $key['status'] == '0'){
 			echo "<tr>";
 			echo "<td>".$key['has_license']."</td>";
 			echo "<td>".$key['work_style']."</td>";
