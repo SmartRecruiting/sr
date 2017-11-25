@@ -60,7 +60,7 @@ class AdminsController extends AppController
         $record = $records->all();
         $data = array();
         $i = 1;
-        foreach ($record['items'] as $r){
+        foreach ($record as $r){
             $customerid = $r['from_answer_id'];
             $code= $r['answer_code'];
             array_push($data[$customerid][$code],$r['answer_value']);
