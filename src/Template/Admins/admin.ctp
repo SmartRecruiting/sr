@@ -14,4 +14,8 @@
     <td>2</td>
 </tr>
 
+<?php 
+	debug($records);
+?>
+
 </table>
