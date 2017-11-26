@@ -55,6 +55,11 @@ class AdminsController extends AppController
     }
 
     public function admin(){
+
+        if(!empty($this->request->data['mode']) && $this->request->data['mode'] == 'update_status') {
+                $this->update_status();
+        }
+
         $this->viewBuilder()->layout('default_admin');
         $this->loadModel('AnswerRecords');
         $records = $this->AnswerRecords->find('all');
@@ -63,10 +68,22 @@ class AdminsController extends AppController
         foreach ($record as $r){
             $customerid = $r['form_answer_id'];
             $code= $r['answer_code'];
+            $data[$customerid]['customerid'] = $customerid;
             $data[$customerid][$code] = $r['answer_value'];
         }
         $this->set('data', $data);
         $this->render('admin');   
+
+    }
+
+    public function update_status(){
+        $customerid = $this->request->data['cid'];
+
+        debug($customerid);
+        $this->loadModel('AnswerRecords');
+        $target = $this->AnswerRecords->find('first', array('conditions' => array('form_answer_id' => $customerid)));
+        echo "XXXXXX";
+        debug($target);
 
     }
 
