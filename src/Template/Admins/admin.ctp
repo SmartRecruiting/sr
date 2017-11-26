@@ -22,7 +22,7 @@
 	<th>ボタン</th>
 </tr>
 <?php
-	foreach($data => $v as $key){
+	foreach($data as $key => $v){
 		if($key['status'] == '0'){
 			echo "<tr>";
 //			echo "<form id='' action='admin' method='POST'>";
