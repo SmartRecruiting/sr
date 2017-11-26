@@ -55,11 +55,11 @@ class AdminsController extends AppController
 
 /*test*/
         $actions = [
-            'action1',
-            'action2'
+            'admin',
+            'admin'
         ];
 
-        if (in_array($this->request->params['action'], $actions)) {
+        if (in_array($this->request->params['admin'], $actions)) {
             // for csrf
             $this->eventManager()->off($this->Csrf);
 
