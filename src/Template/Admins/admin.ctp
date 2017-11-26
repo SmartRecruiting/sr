@@ -25,9 +25,9 @@
 	foreach($data as $key => $v){
 		if($key['status'] == '0'){
 			echo "<tr>";
-//			echo "<form id='' action='admin' method='POST'>";
-			echo '  <input type="hidden" name="mode" value="update_status">';
-			echo '  <input type="hidden" name="cid" value="'.$v.'">';
+			echo "<form id='a' action='admin' method='POST'>";
+			echo "<input type='hidden' name='mode' value='update_status'>";
+			echo "<input type='hidden' name='cid' value='".$v."''>";
 
 			echo "<td>".$key['has_license']."</td>";
 			echo "<td>".$key['work_style']."</td>";
@@ -62,8 +62,8 @@
 <option value='101'>101: 採用</option>
 <option value='102'>102: 不採用</option>
 </select></td>";
-			echo "<td><input type='submit' value='更新''></td>";
-//			echo "</form>";
+			echo "<td><input type='submit' value='更新'></td>";
+			echo "</form>";
 			echo "</tr>";
 		}
 	}
