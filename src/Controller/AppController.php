@@ -66,6 +66,21 @@ class AppController extends Controller
             $this->layout = 'default_admin';
         }   
 
+/*test*/
+        $actions = [
+            'action1',
+            'action2'
+        ];
+
+        if (in_array($this->request->params['action'], $actions)) {
+            // for csrf
+            $this->eventManager()->off($this->Csrf);
+
+            // for security component
+            $this->Security->config('unlockedActions', $actions);
+        }
+/* end of test*/
+
         // Note: These defaults are just to get started quickly with development
         // and should not be used in production. You should instead set "_serialize"
         // in each action as required.
