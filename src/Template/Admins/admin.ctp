@@ -29,7 +29,7 @@
 			echo "<input type='hidden' name='mode' value='update_status'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
 
-			echo "<td>".$key['customerid'].$key['has_license']."</td>";
+			echo "<td>".$key['has_license']."</td>";
 			echo "<td>".$key['work_style']."</td>";
 			if(!empty($key['term_wish'])){
 				echo "<td>".$key['term_wish']."</td>";

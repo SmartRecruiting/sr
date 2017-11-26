@@ -52,6 +52,22 @@ class AdminsController extends AppController
 
     public function beforeRender(Event $event) {
         parent::beforeRender($event);
+
+/*test*/
+        $actions = [
+            'action1',
+            'action2'
+        ];
+
+        if (in_array($this->request->params['action'], $actions)) {
+            // for csrf
+            $this->eventManager()->off($this->Csrf);
+
+            // for security component
+            $this->Security->config('unlockedActions', $actions);
+        }
+/* end of test*/
+
     }
 
     public function admin(){
