@@ -57,6 +57,7 @@ class AdminsController extends AppController
     public function admin(){
 
         if(!empty($this->request->data['mode']) && $this->request->data['mode'] == 'update_status') {
+            debug("XXXYYYZZZ");
                 $this->update_status();
         }
 
