@@ -19,7 +19,16 @@ class AdminsController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Security->unlockedActions = array('admin');
+        $actions = [
+           'admin',
+        ];
+
+        if (in_array($this->request->params['admin'], $actions)) {
+            // for csrf
+            $this->eventManager()->off($this->Csrf);
+            // for security component
+            $this->Security->config('unlockedActions', $actions);
+        }
         $this->detector = new Mobile_Detect;
         $env_suffix = 'pc';
         if ( $this->detector->isMobile() && !$this->detector->isTablet() ) {
