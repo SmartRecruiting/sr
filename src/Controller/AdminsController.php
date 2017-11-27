@@ -95,13 +95,13 @@ class AdminsController extends AppController
 
         debug($customerid);
         $this->loadModel('AnswerRecords');
-        $target = $this->AnswerRecords->find('first', array('conditions' => array('form_answer_id' => $customerid)));
+        $target = $this->AnswerRecords->find('all', array('conditions' => array('form_answer_id' => $customerid)));
         $status = $this->request->data['status'];
 
         $field = [];
-//        $field['id'] = $target['AnswerRecords']['id'];
- //       $field['status'] = $status;
-   //     $this->AnswerRecords->save($field, false);
+        $field['id'] = $target['AnswerRecords']['id'];
+        $field['status'] = $status;
+        $this->AnswerRecords->save($field, false);
 
         echo "XXXXXX";
         debug($target);
