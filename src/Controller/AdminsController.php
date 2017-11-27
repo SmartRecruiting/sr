@@ -24,7 +24,7 @@ class AdminsController extends AppController
            'update_status'
         ];
 
-        if (in_array($this->request->params['admin'], $actions)) {
+        if (in_array($this->request->params['action'], $actions)) {
             // for csrf
             $this->eventManager()->off($this->Csrf);
             // for security component
