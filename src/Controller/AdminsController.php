@@ -100,8 +100,8 @@ class AdminsController extends AppController
 
         $status = $this->request->data['status'];
         $field = [];
-        $field['id'] = $target['AnswerRecords']['id'];
-        $field['status'] = $status;
+        $field[11]['id'] = $target[11]['id'];
+        $field[11]['answer_value'] = $status;
         $this->AnswerRecords->save($field, false);
     }
 
