@@ -70,7 +70,6 @@ class AdminsController extends AppController
     public function admin(){
 
         if(!empty($this->request->data['mode']) && $this->request->data['mode'] == 'update_status') {
-            debug("XXXYYYZZZ");
                 $this->update_status();
         }
 
@@ -97,14 +96,14 @@ class AdminsController extends AppController
         $this->loadModel('AnswerRecords');
         $target = $this->AnswerRecords->find('all', array('conditions' => array('form_answer_id' => $customerid)));
         $status = $this->request->data['status'];
-
+        debug($target);
         $field = [];
-        $field['id'] = $target['AnswerRecords']['id'];
-        $field['status'] = $status;
-        $this->AnswerRecords->save($field, false);
+        //$field['id'] = $target['AnswerRecords']['id'];
+        //$field['status'] = $status;
+        //$this->AnswerRecords->save($field, false);
 
         echo "XXXXXX";
-        debug($target);
+        //debug($target);
         echo "YYYY";
         debug($status);
 
