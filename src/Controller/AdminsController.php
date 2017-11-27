@@ -21,6 +21,7 @@ class AdminsController extends AppController
         parent::beforeFilter($event);
         $actions = [
            'admin',
+           'update_status'
         ];
 
         if (in_array($this->request->params['admin'], $actions)) {
