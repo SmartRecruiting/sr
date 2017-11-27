@@ -96,7 +96,9 @@ class AdminsController extends AppController
         $this->loadModel('AnswerRecords');
         $target = $this->AnswerRecords->find('all', array('conditions' => array('form_answer_id' => $customerid)));
         $target = $target->all();
-        debug($target);
+        debug($target['items']);
+        debug($target[11]);
+        debug($target[11]['id']);
 
         $status = $this->request->data['status'];
         $field = [];
