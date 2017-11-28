@@ -98,6 +98,13 @@ class AdminsController extends AppController
         $target = $target->all();
         debug($target);
 
+        debug($target['items']);
+        echo "AAA";
+        debug($target['11']);
+        echo "BBB";
+        debug($target[11]);
+        echo "CCC";
+
         $status = $this->request->data['status'];
         $field = [];
         $field[11]['id'] = $target[11]['id'];
