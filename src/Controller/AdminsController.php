@@ -100,12 +100,12 @@ class AdminsController extends AppController
 
         debug("AAA");
         debug("BBB");
-        debug($target->items);
+        debug($target->11);
         echo "CCC";
 
         $status = $this->request->data['status'];
         $field = [];
-        $field[11]['id'] = $target->items[11]->id;
+        $field[11]['id'] = $target->11->id;
         $field[11]['answer_value'] = $status;
         //$this->AnswerRecords->save($field, false);
     }
