@@ -2,17 +2,22 @@
 // src/View/admin.ctp
 ?>
 
-<h1>管理画面</h1>
+<h1 style="padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+color: #494949;/*文字色*/
+background: #f4f4f4;/*背景色*/
+border-left: solid 5px #7db4e6;/*左線*/
+border-bottom: solid 3px #d7d7d7;/*下線*/
+">管理画面</h1>
 
-<table border="1">
-<tr>
+<table>
+<thead><tr>
+	<th>名前</th>
 	<th>職種</th>
 	<th>働き方</th>
 	<th>転職期間</th>
 	<th>郵便番号</th>
 	<th>都道府県</th>
 	<th>市区町村</th>
-	<th>名前</th>
 	<th>出生年</th>
 	<th>出生月</th>
 	<th>電話番号</th>
@@ -20,7 +25,7 @@
 	<th>ステータス1</th>
 	<th>ステータス2</th>
 	<th>ボタン</th>
-</tr>
+</tr></thead>
 <?php
 	foreach($data as $key){
 		if($key['status'] == '0' || $key['status'] == '1' || $key['status'] == '2' || $key['status'] == '3' || $key['status'] == '4'){
@@ -32,6 +37,7 @@
 			echo "<input type='hidden' name='mode' value='update_status'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
 
+			echo "<td>".$key['name']."</td>";
 			echo "<td>".$key['has_license']."</td>";
 			echo "<td>".$key['work_style']."</td>";
 			if(!empty($key['term_wish'])){
@@ -46,7 +52,6 @@
 			}
 			echo "<td>".$key['address_prefecture']."</td>";
 			echo "<td>".$key['address_city']."</td>";
-			echo "<td>".$key['name']."</td>";
 			echo "<td>".$key['birthday_year']."</td>";
 			echo "<td>".$key['birthday_month']."</td>";
 			echo "<td>".$key['tel']."</td>";
