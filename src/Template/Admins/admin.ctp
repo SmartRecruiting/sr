@@ -68,7 +68,6 @@
 			echo "<td><input type='submit' value='更新'></td>";
 			echo "</form>";
 			echo "</tr>";
-		}
 	}
 //	debug($data);
 ?>
