@@ -104,6 +104,9 @@ class AdminsController extends AppController
     //    $field[11]['answer_value'] = $status;
     //    $this->AnswerRecords->save($field, false);
 
+                $this->loadModel('FormAnswers');
+                $this->FormAnswers->getConnection()->begin();
+                $this->FormAnswers->newEntity();
 
 
                             $save_record = $this->AnswerRecords->newEntity();
