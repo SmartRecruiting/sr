@@ -98,7 +98,6 @@ class AdminsController extends AppController
         $target = $target->all();
         debug($target);
 
-        debug($target['items']);
         echo "AAA";
         debug($target['11']);
         echo "BBB";
