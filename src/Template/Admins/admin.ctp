@@ -23,7 +23,7 @@
 </tr>
 <?php
 	foreach($data as $key){
-		if($key['status'] == '0'){
+		if($key['status'] == '0' || $key['status'] == '2'){
 			echo "<tr>";
 			echo "<form id='a' action='admin' method='POST'>";
 			echo "<input type='hidden' name='mode' value='update_status'>";
@@ -68,7 +68,6 @@
 		}
 	}
 //	debug($data);
-
 ?>
 
 </table>
