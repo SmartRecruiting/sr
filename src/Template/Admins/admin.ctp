@@ -23,8 +23,11 @@
 </tr>
 <?php
 	foreach($data as $key){
-		if($key['status'] == '0' || $key['status'] == '2'){
+		if($key['status'] == '0' || $key['status'] == '1' || $key['status'] == '2' || $key['status'] == '3' || $key['status'] == '4'){
 			echo "<tr>";
+		} elseif($key['status'] == '101' || $key['status'] == '102'){
+			echo "<tr style='background-color:#B5B5B6;'>";
+		}
 			echo "<form id='a' action='admin' method='POST'>";
 			echo "<input type='hidden' name='mode' value='update_status'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
@@ -54,14 +57,14 @@
 			}
 			echo "<td>".$key['status']."</td>";
 			echo "<td><select name='status'>
-<option value='0'>0: 未対応</option>
-<option value='1'>1: 電話予定</option>
-<option value='2'>2: 電話調整中</option>
-<option value='3'>3: 面接調整中</option>
-<option value='4'>4: 面接済</option>
-<option value='101'>101: 採用</option>
-<option value='102'>102: 不採用</option>
-</select></td>";
+				<option value='0'>0: 未対応</option>
+				<option value='1'>1: 電話予定</option>
+				<option value='2'>2: 電話調整中</option>
+				<option value='3'>3: 面接調整中</option>
+				<option value='4'>4: 面接済</option>
+				<option value='101'>101: 採用</option>
+				<option value='102'>102: 不採用</option>
+				</select></td>";
 			echo "<td><input type='submit' value='更新'></td>";
 			echo "</form>";
 			echo "</tr>";
