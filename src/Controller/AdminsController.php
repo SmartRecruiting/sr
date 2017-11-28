@@ -119,7 +119,8 @@ class AdminsController extends AppController
 
         // comment追加
         $save_record2 = $this->AnswerRecords->newEntity();
-        $save_param2 = ['id'=>$cid, 'answer_value'=>$comment];
+        $cid2 = $target->toArray()[12]['id'];
+        $save_param2 = ['id'=>$cid2, 'answer_value'=>$comment];
         $processing2 = $this->AnswerRecords->find()->where(['id' => $cid])->first();
         $processing2 = $this->AnswerRecords->patchEntity($processing2, $save_param2);
         $this->AnswerRecords->save($processing2);

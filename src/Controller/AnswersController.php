@@ -149,7 +149,7 @@ class AnswersController extends AppController
 
                         // コメント
                         $save_record = $this->AnswerRecords->newEntity();
-                        $save_status = ['form_answer_id'=>$form_answer_id, 'answer_code'=>'comment', 'answer_value'=>NULL];
+                        $save_status = ['form_answer_id'=>$form_answer_id, 'answer_code'=>'comment', 'answer_value'=>""];
                         $save_record = $this->FormAnswers->patchEntity($save_record, $save_status);
                         $this->AnswerRecords->save($save_record);
 
