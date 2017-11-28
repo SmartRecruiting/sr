@@ -113,7 +113,7 @@ class AdminsController extends AppController
         //$save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
         
 
-            $save_param = ['uid'=>$session_data['form_meta']['uid']];
+           // $save_param = ['uid'=>$session_data['form_meta']['uid']];
             $processing = $this->AnswerRecords->find()->where(['id' => $cid])->first();
             if(empty($processing)){
                 $processing = $this->AnswerRecords->newEntity();
