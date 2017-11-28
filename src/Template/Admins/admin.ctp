@@ -11,11 +11,11 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 
 <table>
 <thead><tr>
-	<th>名前</th>
-	<th>申込日時</th>
+	<th width='100px'>名前</th>
+	<th width='100px'>申込日時</th>
 	<th>職種</th>
 	<th>働き方</th>
-	<th>転職期間</th>
+	<th width='150px'>転職期間</th>
 	<th>郵便番号</th>
 	<th>都道府県</th>
 	<th>市区町村</th>
@@ -26,7 +26,7 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 	<th>ステータス</th>
 	<th>備考</th>
 	<th>ボタン</th>
-</tr></thead>
+</tr></thead><tbody>
 <?php
 	foreach($data as $key){
 		if(!empty($key['status']) && ($key['status'] == '0' || $key['status'] == '1' || $key['status'] == '2' || $key['status'] == '3' || $key['status'] == '4')){
@@ -38,12 +38,12 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 			echo "<input type='hidden' name='mode' value='update'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
 
-			echo "<td width='100px'>".$key['name']."</td>";
-			echo "<td width='100px'>".$key['datetime']."</td>";
+			echo "<td>".$key['name']."</td>";
+			echo "<td>".$key['datetime']."</td>";
 			echo "<td>".$key['has_license']."</td>";
-			echo "<td width='100px'>".$key['work_style']."</td>";
+			echo "<td>".$key['work_style']."</td>";
 			if(!empty($key['term_wish'])){
-				echo "<td width='150px'>".$key['term_wish']."</td>";
+				echo "<td>".$key['term_wish']."</td>";
 			}else{
 				echo "<td></td>";
 			}
@@ -106,5 +106,5 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 	}
 //	debug($data);
 ?>
-
+</tbody>
 </table>
