@@ -7,9 +7,9 @@ color: #494949;/*文字色*/
 background: #f4f4f4;/*背景色*/
 border-left: solid 5px #7db4e6;/*左線*/
 border-bottom: solid 3px #d7d7d7;/*下線*/
-">SmartRecruiting: 採用管理画面</h1>
+">スマートリクルーティング: 採用管理画面</h1>
 
-<table style="font:9px;">
+<table style="font-size:8px;">
 <thead><tr>
 	<th width='100'>名前</th>
 	<th width='100'>申込日時</th>
