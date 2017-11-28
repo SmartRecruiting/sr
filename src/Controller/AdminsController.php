@@ -107,12 +107,24 @@ class AdminsController extends AppController
         $save_record = $this->AnswerRecords->newEntity();
         debug("ID = ".$target->toArray()[11]['id']);
         debug("STATUS = ".$status);
+        $cid = $target->toArray()[11]['id'];
 
         $save_param = ['id'=>$target->toArray()[11]['id'], 'answer_value'=>$status];
-        $save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
-        $this->AnswerRecords->save($save_record);
+        //$save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
+        
+
+            $save_param = ['uid'=>$session_data['form_meta']['uid']];
+            $processing = $this->AnswerRecords->find()->where(['id' => $cid])->first();
+            if(empty($processing)){
+                $processing = $this->AnswerRecords->newEntity();
+            }
+
+            $processing = $this->AnswerRecords->patchEntity($processing, $save_param);
+        $this->AnswerRecords->save($processing);
         $this->AnswerRecords->getConnection()->commit();
         $this->FormAnswers->getConnection()->commit();
+
+
 
     }
 }
