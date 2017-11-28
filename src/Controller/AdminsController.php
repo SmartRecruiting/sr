@@ -92,11 +92,11 @@ class AdminsController extends AppController
     public function update_status(){
         $customerid = $this->request->data['cid'];
 
-        debug($customerid);
+        //debug($customerid);
         $this->loadModel('AnswerRecords');
         $target = $this->AnswerRecords->find('all', array('conditions' => array('form_answer_id' => $customerid)));
         $target = $target->all();
-        debug($target);
+        //debug($target);
 
         $status = $this->request->data['status'];
 
@@ -111,6 +111,9 @@ class AdminsController extends AppController
         $save_param = ['id'=>$target->toArray()[11]['id'], 'answer_value'=>$status];
         $save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
         $this->AnswerRecords->save($save_record);
+        $this->FormAnswers->getConnection()->commit();
+        $this->stepIn('complete');
+
     }
 }
 
