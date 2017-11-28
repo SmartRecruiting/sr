@@ -7,11 +7,12 @@ color: #494949;/*文字色*/
 background: #f4f4f4;/*背景色*/
 border-left: solid 5px #7db4e6;/*左線*/
 border-bottom: solid 3px #d7d7d7;/*下線*/
-">管理画面</h1>
+">スマートリクルーティング採用管理画面</h1>
 
 <table>
 <thead><tr>
 	<th>名前</th>
+	<th>申込日時</th>
 	<th>職種</th>
 	<th>働き方</th>
 	<th>転職期間</th>
@@ -22,7 +23,6 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 	<th>出生月</th>
 	<th>電話番号</th>
 	<th>Email</th>
-	<!--<th>ステータス1</th>-->
 	<th>ステータス</th>
 	<th>備考</th>
 	<th>ボタン</th>
@@ -39,6 +39,7 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
 
 			echo "<td>".$key['name']."</td>";
+			echo "<td>".$key['datetime']."</td>";
 			echo "<td>".$key['has_license']."</td>";
 			echo "<td>".$key['work_style']."</td>";
 			if(!empty($key['term_wish'])){
