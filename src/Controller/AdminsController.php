@@ -100,7 +100,7 @@ class AdminsController extends AppController
 
         debug("AAA");
         debug("BBB");
-        $target_array=json_decode($target, true)
+        $target_array=json_decode($target, true);
         debug($target_array);
         echo "CCC";
 
