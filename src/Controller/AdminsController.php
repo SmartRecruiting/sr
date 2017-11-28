@@ -109,8 +109,8 @@ class AdminsController extends AppController
         debug("STATUS = ".$status);
 
         $save_param = ['id'=>$target->toArray()[11]['id'], 'answer_value'=>$status];
-        //$save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
-        $this->AnswerRecords->save($save_param);
+        $save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
+        $this->AnswerRecords->save($save_record);
     }
 }
 
