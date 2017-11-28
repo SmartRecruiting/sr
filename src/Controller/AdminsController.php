@@ -99,10 +99,19 @@ class AdminsController extends AppController
         debug($target);
 
         $status = $this->request->data['status'];
-        $field = [];
-        $field[11]['id'] = $target->toArray()[11]['id'];
-        $field[11]['answer_value'] = $status;
-        $this->AnswerRecords->save($field, false);
+    //    $field = [];
+    //    $field[11]['id'] = $target->toArray()[11]['id'];
+    //    $field[11]['answer_value'] = $status;
+    //    $this->AnswerRecords->save($field, false);
+
+
+
+                            $save_record = $this->AnswerRecords->newEntity();
+                            $save_param = ['id'=>$target->toArray()[11]['id'], 'answer_value'=>$status];
+                            $save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
+                            $this->AnswerRecords->save($save_record);
+
+
     }
 
 }
