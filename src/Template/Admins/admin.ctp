@@ -29,13 +29,13 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 </tr></thead>
 <?php
 	foreach($data as $key){
-		if($key['status'] == '0' || $key['status'] == '1' || $key['status'] == '2' || $key['status'] == '3' || $key['status'] == '4'){
+		if(!empty($key['status']) && ($key['status'] == '0' || $key['status'] == '1' || $key['status'] == '2' || $key['status'] == '3' || $key['status'] == '4')){
 			echo "<tr>";
-		} elseif($key['status'] == '101' || $key['status'] == '102'){
+		} elseif(!empty($key['status']) && ($key['status'] == '101' || $key['status'] == '102')){
 			echo "<tr style='background-color:#B5B5B6;'>";
 		}
 			echo "<form id='a' action='admin' method='POST'>";
-			echo "<input type='hidden' name='mode' value='update_status'>";
+			echo "<input type='hidden' name='mode' value='update'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
 
 			echo "<td>".$key['name']."</td>";
@@ -94,7 +94,7 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 			echo ">102: 不採用</option>";
 
 			echo "</select></td>";
-			echo "<td>".$key['comment']."</td>";
+			echo "<td><input type='text' name='comment' value='".$key['comment']."'></td>";
 			echo "<td><input type='submit' value='更新'></td>";
 			echo "</form>";
 			echo "</tr>";

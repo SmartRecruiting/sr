@@ -69,7 +69,7 @@ class AdminsController extends AppController
 
     public function admin(){
 
-        if(!empty($this->request->data['mode']) && $this->request->data['mode'] == 'update_status') {
+        if(!empty($this->request->data['mode']) && $this->request->data['mode'] == 'update') {
                 $this->update_status();
         }
 
@@ -99,6 +99,7 @@ class AdminsController extends AppController
         //debug($target);
 
         $status = $this->request->data['status'];
+        $comment = $this->request->data['comment'];
 
         $this->loadModel('FormAnswers');
         $this->FormAnswers->getConnection()->begin();
@@ -109,10 +110,19 @@ class AdminsController extends AppController
         //debug("STATUS = ".$status);
         $cid = $target->toArray()[11]['id'];
 
-        $save_param = ['id'=>$target->toArray()[11]['id'], 'answer_value'=>$status];
+        // status追加
+        $save_param = ['id'=>$cid, 'answer_value'=>$status];
         $processing = $this->AnswerRecords->find()->where(['id' => $cid])->first();
         $processing = $this->AnswerRecords->patchEntity($processing, $save_param);
         $this->AnswerRecords->save($processing);
+        $this->AnswerRecords->getConnection()->commit();
+
+        // comment追加
+        $save_record2 = $this->AnswerRecords->newEntity();
+        $save_param2 = ['id'=>$cid, 'answer_value'=>$comment];
+        $processing2 = $this->AnswerRecords->find()->where(['id' => $cid])->first();
+        $processing2 = $this->AnswerRecords->patchEntity($processing2, $save_param2);
+        $this->AnswerRecords->save($processing2);
         $this->AnswerRecords->getConnection()->commit();
         $this->FormAnswers->getConnection()->commit();
     }
