@@ -100,8 +100,7 @@ class AdminsController extends AppController
 
         debug("AAA");
         debug("BBB");
-        $target_array=json_decode($target, true);
-        debug($target_array);
+        debug($target['items'][0]['answer_value']);
         echo "CCC";
 
         $status = $this->request->data['status'];
