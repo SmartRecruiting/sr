@@ -112,7 +112,6 @@ class AdminsController extends AppController
         $save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
         $this->AnswerRecords->save($save_record);
         $this->FormAnswers->getConnection()->commit();
-        $this->stepIn('complete');
 
     }
 }
