@@ -111,6 +111,7 @@ class AdminsController extends AppController
         $save_param = ['id'=>$target->toArray()[11]['id'], 'answer_value'=>$status];
         $save_record = $this->FormAnswers->patchEntity($save_record, $save_param);
         $this->AnswerRecords->save($save_record);
+        $this->AnswerRecords->getConnection()->commit();
         $this->FormAnswers->getConnection()->commit();
 
     }
