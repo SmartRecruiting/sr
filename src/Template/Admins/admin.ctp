@@ -22,8 +22,9 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 	<th>出生月</th>
 	<th>電話番号</th>
 	<th>Email</th>
-	<th>ステータス1</th>
-	<th>ステータス2</th>
+	<!--<th>ステータス1</th>-->
+	<th>ステータス</th>
+	<th>備考</th>
 	<th>ボタン</th>
 </tr></thead>
 <?php
@@ -60,16 +61,40 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 			}else{
 				echo "<td></td>";
 			}
-			echo "<td>".$key['status']."</td>";
-			echo "<td><select name='status'>
-				<option value='0'>0: 未対応</option>
-				<option value='1'>1: 電話予定</option>
-				<option value='2'>2: 電話調整中</option>
-				<option value='3'>3: 面接調整中</option>
-				<option value='4'>4: 面接済</option>
-				<option value='101'>101: 採用</option>
-				<option value='102'>102: 不採用</option>
-				</select></td>";
+			$status = $key['status'];
+			//echo "<td>".$status."</td>";
+			echo "<td><select name='status'>";
+
+			echo "<option value='0'";
+				if($status == '0'){echo " selected";}
+			echo ">0: 未対応</option>";
+
+			echo "<option value='1'";
+				if($status == '1'){echo " selected";}
+			echo ">1: 電話予定</option>";
+
+			echo "<option value='2'";
+				if($status == '2'){echo " selected";}
+			echo ">2: 電話調整中</option>";
+
+			echo "<option value='3'";
+				if($status == '3'){echo " selected";}
+			echo ">3: 面接調整中</option>";
+
+			echo "<option value='4'";
+				if($status == '4'){echo " selected";}
+			echo ">4: 面接済</option>";
+
+			echo "<option value='101'";
+				if($status == '101'){echo " selected";}
+			echo ">101: 採用</option>";
+
+			echo "<option value='102'";
+				if($status == '102'){echo " selected";}
+			echo ">102: 不採用</option>";
+
+			echo "</select></td>";
+			echo "<td>".$key['comment']."</td>";
 			echo "<td><input type='submit' value='更新'></td>";
 			echo "</form>";
 			echo "</tr>";

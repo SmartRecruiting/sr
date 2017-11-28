@@ -141,8 +141,22 @@ class AnswersController extends AppController
                             }
                         }
 
+                        // ステータス
                         $save_record = $this->AnswerRecords->newEntity();
                         $save_status = ['form_answer_id'=>$form_answer_id, 'answer_code'=>'status', 'answer_value'=>0];
+                        $save_record = $this->FormAnswers->patchEntity($save_record, $save_status);
+                        $this->AnswerRecords->save($save_record);
+
+                        // コメント
+                        $save_record = $this->AnswerRecords->newEntity();
+                        $save_status = ['form_answer_id'=>$form_answer_id, 'answer_code'=>'comment', 'answer_value'=>NULL];
+                        $save_record = $this->FormAnswers->patchEntity($save_record, $save_status);
+                        $this->AnswerRecords->save($save_record);
+
+                        // 日時
+                        $now = date('Y-m-d H:i:s');
+                        $save_record = $this->AnswerRecords->newEntity();
+                        $save_status = ['form_answer_id'=>$form_answer_id, 'answer_code'=>'datetime', 'answer_value'=>$now];
                         $save_record = $this->FormAnswers->patchEntity($save_record, $save_status);
                         $this->AnswerRecords->save($save_record);
 
