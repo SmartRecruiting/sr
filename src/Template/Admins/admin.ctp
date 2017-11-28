@@ -38,12 +38,12 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 			echo "<input type='hidden' name='mode' value='update'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
 
-			echo "<td>".$key['name']."</td>";
-			echo "<td>".$key['datetime']."</td>";
+			echo "<td width='100px'>".$key['name']."</td>";
+			echo "<td width='100px'>".$key['datetime']."</td>";
 			echo "<td>".$key['has_license']."</td>";
-			echo "<td>".$key['work_style']."</td>";
+			echo "<td width='100px'>".$key['work_style']."</td>";
 			if(!empty($key['term_wish'])){
-				echo "<td>".$key['term_wish']."</td>";
+				echo "<td width='150px'>".$key['term_wish']."</td>";
 			}else{
 				echo "<td></td>";
 			}
@@ -93,6 +93,10 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 			echo "<option value='102'";
 				if($status == '102'){echo " selected";}
 			echo ">102: 不採用</option>";
+
+			echo "<option value='999'";
+				if($status == '999'){echo " selected";}
+			echo ">999: 削除</option>";
 
 			echo "</select></td>";
 			echo "<td><input type='text' name='comment' value='".$key['comment']."'></td>";
