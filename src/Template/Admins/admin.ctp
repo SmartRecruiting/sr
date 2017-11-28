@@ -7,15 +7,15 @@ color: #494949;/*文字色*/
 background: #f4f4f4;/*背景色*/
 border-left: solid 5px #7db4e6;/*左線*/
 border-bottom: solid 3px #d7d7d7;/*下線*/
-">スマートリクルーティング採用管理画面</h1>
+">SmartRecruiting: 採用管理画面</h1>
 
 <table>
 <thead><tr>
-	<th width='100px'>名前</th>
-	<th width='100px'>申込日時</th>
+	<th width='100'>名前</th>
+	<th width='100'>申込日時</th>
 	<th>職種</th>
 	<th>働き方</th>
-	<th width='150px'>転職期間</th>
+	<th width='150'>転職期間</th>
 	<th>郵便番号</th>
 	<th>都道府県</th>
 	<th>市区町村</th>
