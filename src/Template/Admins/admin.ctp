@@ -11,11 +11,11 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 
 <table style="font-size:8px;">
 <thead><tr>
-	<th width='100'>名前</th>
-	<th width='100'>申込日時</th>
+	<th style='width:100px'>名前</th>
+	<th style='width:100px'>申込日時</th>
 	<th>職種</th>
 	<th>働き方</th>
-	<th width='150'>転職期間</th>
+	<th style='width:150px'>転職期間</th>
 	<th>郵便番号</th>
 	<th>都道府県</th>
 	<th>市区町村</th>
@@ -33,7 +33,8 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 			echo "<tr>";
 		} elseif(!empty($key['status']) && ($key['status'] == '101' || $key['status'] == '102')){
 			echo "<tr style='background-color:#B5B5B6;'>";
-		}
+		} 
+
 			echo "<form id='a' action='admin' method='POST'>";
 			echo "<input type='hidden' name='mode' value='update'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
@@ -94,15 +95,17 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 				if($status == '102'){echo " selected";}
 			echo ">102: 不採用</option>";
 
-			echo "<option value='999'";
-				if($status == '999'){echo " selected";}
-			echo ">999: 削除</option>";
+			echo "<option value='103'";
+				if($status == '103'){echo " selected";}
+			echo ">103: 保留</option>";
 
 			echo "</select></td>";
-			echo "<td><input type='text' name='comment' value='".$key['comment']."'></td>";
+//			echo "<td><input type='text' name='comment' value='".$key['comment']."'></td>";
+			echo "<td><textarea name='comment' value='".$key['comment']."' rows='2'>".$key['comment']."</td>";
 			echo "<td><input type='submit' value='更新'></td>";
 			echo "</form>";
 			echo "</tr>";
+		
 	}
 //	debug($data);
 ?>
