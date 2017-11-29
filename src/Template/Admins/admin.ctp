@@ -31,10 +31,9 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 	foreach($data as $key){
 		if(!empty($key['status']) && ($key['status'] == '0' || $key['status'] == '1' || $key['status'] == '2' || $key['status'] == '3' || $key['status'] == '4')){
 			echo "<tr>";
-		} elseif(!empty($key['status']) && ($key['status'] == '101' || $key['status'] == '102')){
+		} elseif(!empty($key['status']) && ($key['status'] == '101' || $key['status'] == '102' || $key['status'] == '103')){
 			echo "<tr style='background-color:#B5B5B6;'>";
 		} 
-
 			echo "<form id='a' action='admin' method='POST'>";
 			echo "<input type='hidden' name='mode' value='update'>";
 			echo "<input type='hidden' name='cid' value='".$key['customerid']."'>";
@@ -101,7 +100,7 @@ border-bottom: solid 3px #d7d7d7;/*下線*/
 
 			echo "</select></td>";
 //			echo "<td><input type='text' name='comment' value='".$key['comment']."'></td>";
-			echo "<td><textarea name='comment' value='".$key['comment']."' rows='2'>".$key['comment']."</td>";
+			echo "<td><textarea name='comment' value='".$key['comment']."' rows='2'>".$key['comment']."</textarea></td>";
 			echo "<td><input type='submit' value='更新'></td>";
 			echo "</form>";
 			echo "</tr>";
