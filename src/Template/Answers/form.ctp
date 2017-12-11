@@ -35,7 +35,7 @@ var q_fields = '.json_encode($fields).';
                     <?php
 
                     echo $this->Form->input('has_license', array('type' => 'hidden','name' => 'has_license', 'default' => 0,));
-                    echo $this -> Form -> control('has_license', ['hiddenField' => false,"label"=>"訪問看護師","class"=>"has_license", "type"=>"checkbox", "id" => "has_license_1", "value" => "看護師", "required"=>true ] );
+                    echo $this -> Form -> control('has_license', ['hiddenField' => false,"label"=>"看護師","class"=>"has_license", "type"=>"checkbox", "id" => "has_license_1", "value" => "看護師", "required"=>true ] );
                     echo $this -> Form -> control('has_license', ['hiddenField' => false, "label"=>"准看護師","class"=>"has_license", "type"=>"checkbox", "id" => "has_license_2", "value" => "准看護師", "required"=>true ] );
                    // echo $this -> Form -> control('has_license', ['hiddenField' => false, "label"=>"保健師","class"=>"has_license", "type"=>"checkbox", "id" => "has_license_3", "value" => "保健師", "required"=>true ] );
                    // echo $this -> Form -> control('has_license', ['hiddenField' => false, "label"=>"その他","class"=>"has_license", "type"=>"checkbox", "id" => "has_license_4", "value" => "その他", "required"=>true ] );
