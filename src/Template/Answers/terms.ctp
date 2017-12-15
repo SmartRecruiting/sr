@@ -11,7 +11,7 @@
 
         <div class="doc_contents">
             <h3><strong>1</strong><strong>．</strong><strong>Smart Recruiting</strong><strong>とは</strong></h3>
-            <p>「<strong>Smart Recruiting</strong>」（以下、本サービス）とは、株式会社しなのビジネスセンター（以下、当社）が本サイトを通じて提供する求人・求職情報および転職支援、その他関連する各種サービスの総称です。 </p>
+            <p>「<strong>Smart Recruiting</strong>」（以下、本サービス）とは、株式会社JSH（以下、当社）が本サイトを通じて提供する求人・求職情報および転職支援、その他関連する各種サービスの総称です。 </p>
             <div>
                 <h3><strong>2</strong><strong>．ユーザーとは</strong></h3>
             </div>
