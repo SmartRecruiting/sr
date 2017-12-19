@@ -25,7 +25,7 @@
 
 <?php    
 
-    if($_SERVER['REQUEST_URI']){
+    if($_SERVER['REQUEST_URI'] == '/complete'){
 ?>
         <!-- Event snippet for JSH Conversion conversion page -->
         <script>
@@ -37,10 +37,6 @@
 </head>
 
 <body>
-<?php
-    debug($_SERVER['REQUEST_URI']);
-    echo $_SERVER['REQUEST_URI'];
-?>
 <div id="site_wrapper">
     <div id="site_bg_back">
         <div id="site_bg_body">

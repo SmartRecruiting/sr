@@ -13,10 +13,30 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <?= $this->Html->meta('icon') ?>
+    <!-- Global site tag (gtag.js) - Google AdWords: 959718445 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-959718445"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+      gtag('config', 'AW-959718445');
+    </script>
+
+<?php    
+
+    if($_SERVER['REQUEST_URI'] == '/complete'){
+?>
+        <!-- Event snippet for JSH Conversion conversion page -->
+        <script>
+        gtag('event', 'conversion', {'send_to': 'AW-959718445/G_s5COTCznoQrcjQyQM'});
+        </script>
+<?php
+    }
+?>  
 </head>
 <body>
 
-<body>
 <div id="site_wrapper">
     <div id="site_bg_back">
         <div id="site_bg_body" class="<?php echo @$bg_image ?>">
