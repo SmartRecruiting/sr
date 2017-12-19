@@ -44,9 +44,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </script>
 
 <?php    
+
     if($_SERVER['REQUEST_URI']){
-        debug($_SERVER['REQUEST_URI']);
-        echo $_SERVER['REQUEST_URI'];
 ?>
         <!-- Event snippet for JSH Conversion conversion page -->
         <script>
@@ -58,6 +57,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 </head>
 <body>
+<?php
+        debug($_SERVER['REQUEST_URI']);
+        echo $_SERVER['REQUEST_URI'];
+?>
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
