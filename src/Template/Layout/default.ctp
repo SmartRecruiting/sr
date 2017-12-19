@@ -33,34 +33,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 
-    <!-- Global site tag (gtag.js) - Google AdWords: 959718445 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-959718445"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-      gtag('config', 'AW-959718445');
-    </script>
-
-<?php    
-
-    if($_SERVER['REQUEST_URI']){
-?>
-        <!-- Event snippet for JSH Conversion conversion page -->
-        <script>
-        gtag('event', 'conversion', {'send_to': 'AW-959718445/G_s5COTCznoQrcjQyQM'});
-        </script>
-<?php
-    }
-?>
 
 </head>
 <body>
-<?php
-        debug($_SERVER['REQUEST_URI']);
-        echo $_SERVER['REQUEST_URI'];
-?>
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
