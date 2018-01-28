@@ -198,7 +198,7 @@ contact@smartrecruiting.jp
 03-3272-0606'
 ; // 本文
                             $to = $email;
-                            $bcc_to = 'contact@smartrecruiting.jp';
+                            $bcc_to = 'contact@smartrecruiting.jp,nozomi.hamanishi@jsh-japan.jp';
                             $sys_from = 'contact@smartrecruiting.jp';
                             $header = "From: $sys_from\nReply-To: $sys_from\n";
 
