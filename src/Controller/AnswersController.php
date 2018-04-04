@@ -205,6 +205,52 @@ contact@smartrecruiting.jp
                             $mail_send_res = mb_send_mail($to, $subject, $body, $header);
                             $mail_send_res2 = mb_send_mail($bcc_to, '[管理通知]'.$subject, $body, $header);
 
+                        }else{
+                            mb_language("Japanese");
+                            mb_internal_encoding("UTF-8");
+
+                            //$email = $reqData['email'];
+                            $subject = "Smart Recruiting（非公開求人情報）へのお申し込みを受け付けました"; // 題名
+                            $body ='';
+                            $body = $reqData['name'].'様
+
+*Emailの情報未入力の方です。こちらのメールはユーザー様には送られていません。
+
+ご入力ありがとうございました。
+Smart Recruiting（非公開求人情報）へのお申し込みを受け付けました。
+下記の電話番号より速やかにお電話させて頂きます。
+（夜間の場合には翌朝以降にご連絡させて頂きます。）
+
+03-3272-0606
+
+=== ご入力頂いた情報 ===
+';
+                        foreach($reqData as $k => $value){
+                            if(!empty($value) && !empty($form->labels[$k])){
+                             $body .= $form->labels[$k] . ' : '.$value."\n";
+                            }
+                        }
+
+$body .='
+=====================
+
+何卒よろしくお願い致します。
+
+
+Smart Recruiting 
+contact@smartrecruiting.jp
+03-3272-0606'
+; // 本文
+                            $to = 'contact@smartrecruiting.jp,nozomi.hamanishi@jsh-japan.jp';
+                            $sys_from = 'contact@smartrecruiting.jp';
+                            $header = "From: $sys_from\nReply-To: $sys_from\n";
+
+                            $mail_send_res = mb_send_mail($to, $subject, $body, $header);
+                            $mail_send_res2 = mb_send_mail($bcc_to, '[管理通知]'.$subject, $body, $header);
+
+
+
+
                         }
 
                         $uid = sha1( uniqid( mt_rand() , true ) );
